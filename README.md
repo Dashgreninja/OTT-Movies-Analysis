@@ -30,6 +30,7 @@ I used three tools to make this happen without having to do manual work every da
 I didn't want to run code manually every time. I set up a **Power Automate** flow so that everything happens with one click.
 
 ![Power Automate Flow](assets/Power_Automate.png)
+
 *Caption: My automation flow that runs the Python script and refreshes Power BI.*
 
 **What happens in this flow:**
