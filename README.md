@@ -12,7 +12,7 @@ I used a special **80/20 Rule** to rank them:
 ### **📊 The Final Result**
 This is the "brain" of the project. The podium automatically updates to show the top 3 movies we should buy right now based on our 80/20 math.
 
-![Podium Screenshot](assets/top 3 movies.png)
+![Podium Screenshot](assets/Top_Movies.png)
 *Caption: The dynamic podium showing our #1 acquisition target based on the latest data.*
 
 ---
@@ -29,7 +29,7 @@ I used three tools to make this happen without having to do manual work every da
 ### **🔄 The Automation Flow**
 I didn't want to run code manually every time. I set up a **Power Automate** flow so that everything happens with one click.
 
-![Power Automate Flow](assets/power_automate_flow.png)
+![Power Automate Flow](assets/Power_Automate.png)
 *Caption: My automation flow that runs the Python script and refreshes Power BI.*
 
 **What happens in this flow:**
@@ -42,7 +42,7 @@ I didn't want to run code manually every time. I set up a **Power Automate** flo
 ### **🔍 Strategic Analysis**
 I also created a **Strategic Acquisition Map** (a scatter chart). This helps us see which movies are "low risk" and which ones are "superstars."
 
-![Scatter Chart Screenshot](assets/scatter_chart_screenshot.png)
+![Scatter Chart Screenshot](assets/Scatter_Chart.png)
 *Caption: Our Strategic Map. Movies in the top-right corner are our best buys.*
 
 ---
@@ -60,3 +60,4 @@ If you want to run this project on your machine, you will need:
 * **`/data`**: Stores the movie spreadsheets.
 * **`/src`**: Contains the Python extraction code.
 * **`/powerbi`**: Contains the Power BI `.pbix` file.
+
