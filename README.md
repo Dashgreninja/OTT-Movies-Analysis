@@ -12,7 +12,7 @@ I used a special **80/20 Rule** to rank them:
 ### **📊 The Final Result**
 This is the "brain" of the project. The podium automatically updates to show the top 3 movies we should buy right now based on our 80/20 math.
 
-![Podium Screenshot](assets/podium_screenshot.png)
+![Podium Screenshot](assets/top 3 movies.png)
 *Caption: The dynamic podium showing our #1 acquisition target based on the latest data.*
 
 ---
