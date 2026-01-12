@@ -1,64 +1,76 @@
 # 🎬 OTT Movie Scout: Finding Our Next Big Hit
 
-### **The Goal**
-Deciding which movie to add to a streaming platform is a multi-million dollar gamble. Usually, people just look at how popular a movie is. But I wanted to be smarter. I built an automated system that finds movies that are **popular** AND **profitable**. 
+## 🎯 Project Goal
+Deciding which movie to add to a streaming platform is a multi-million dollar gamble. Usually, platforms just look at raw popularity. I built an automated system that finds movies that are both **popular** and **profitable**.
 
-I used a special **80/20 Rule** to rank them:
-* **80% Audience Buzz:** (Do people love it?)
-* **20% ROI:** (Was it a good deal for the money?)
+To identify the best acquisition targets, I used a custom **80/20 Selection Logic**:
+* **80% Audience Buzz** (Market demand and talkability)
+* **20% ROI Efficiency** (Financial safety and return on investment)
 
 ---
 
-### **📊 The Final Result**
+## 🏆 The Final Result
 This is the "brain" of the project. The podium automatically updates to show the top 3 movies we should buy right now based on our 80/20 math.
 
 ![Podium Screenshot](assets/Top_Movies.png)
-*Caption: The dynamic podium showing our #1 acquisition target based on the latest data.*
+*Caption: Dynamic rankings powered by real-time TMDB data.*
 
 ---
 
-### **🛠️ How It Works (The Tech Stack)**
-I used three tools to make this happen without having to do manual work every day:
+## 🛠️ Tech Stack & Libraries
+To handle the data and automation, I used **Python 3.10+** with the following libraries:
 
-1.  **Python:** My "Data Collector." It uses the TMDB API to grab the latest movie stats.
-2.  **Power Automate Desktop:** My "Manager." It handles the automation loop—running the script and refreshing the data.
-3.  **Power BI:** My "Presenter." It turns messy numbers into the interactive dashboard you see above.
+* **`pandas`**: For data cleaning and creating the final CSV.
+* **`requests`**: To fetch real-time movie data from the TMDB API.
+* **`python-dotenv`**: To securely manage API keys.
+* **`pathlib` & `os`**: To handle file paths across different folders.
+* **`datetime` & `time`**: To manage date filtering and API rate limits.
 
 ---
 
-### **🔄 The Automation Flow**
-I didn't want to run code manually every time. I set up a **Power Automate** flow so that everything happens with one click.
+## 🔄 Automated Workflow (Power Automate Desktop)
+I built a 5-step automation flow to ensure the dashboard stays fresh without any manual effort. 
 
 ![Power Automate Flow](assets/Power_Automate.png)
 
-*Caption: My automation flow that runs the Python script and refreshes Power BI.*
-
-**What happens in this flow:**
-* It opens a Command Prompt window so you can watch the Python script work in real-time.
-* It waits for the script to finish downloading the data.
-* It automatically refreshes the Power BI dashboard so the charts update instantly.
+**Step-by-Step Flow Logic:**
+1.  **Run Application**: Launches `cmd.exe` with arguments `/k ""python" -u "path\tmdb_extractor.py" & exit"`. This runs the python program and shows the live extraction progress in a "Normal" window.
+2.  **Wait (3 Seconds)**: Ensures the new data is fully saved to the CSV file.
+3.  **Run Application**: Opens the `.pbix` report in a **Maximized** window.
+4.  **Wait for Window**: Pauses until the "OTT Movies Analysis" window is open and focused.
+5.  **Click UI Element**: Automatically clicks the **'Refresh'** button in the Power BI ribbon to update all visuals.
 
 ---
 
-### **🔍 Strategic Analysis**
-I also created a **Strategic Acquisition Map** (a scatter chart). This helps us see which movies are "low risk" and which ones are "superstars."
+## 🔍 Strategic Analysis
+I created a **Strategic Acquisition Map** (Scatter Chart) to visualize where movies land in the market.
+* **Top-Right (The Gold Mine):** High-demand, High-profit "Superstars".
+* **Top-Left (The Risk):** Popular movies that are expensive to produce relative to their return.
 
 ![Scatter Chart Screenshot](assets/Scatter_Chart.png)
-*Caption: Our Strategic Map. Movies in the top-right corner are our best buys.*
+
+*Caption: Visualizing profitability vs. popularity to minimize financial risk.*
 
 ---
 
-### **⚙️ Requirements to Run**
-If you want to run this project on your machine, you will need:
-* **Python installed**.
-* **A TMDB API Key** (to get the movie data).
-* **🌍 A VPN (Mandatory):** The TMDB API requires a VPN to connect properly in certain regions. Make sure your VPN is **ON** before running the script.
-* **Power BI Desktop** to open the report.
+## 🚀 How to Run This Project
+
+### **1. Prerequisites**
+* **Python 3.10+**.
+* **TMDB API Key** (Place it in a `.env` file as `TMDB_API_KEY=your_key`).
+* **🌍 VPN (Mandatory)**: A VPN is required to connect to the TMDB API servers properly.
+* **Power BI Desktop**.
+
+### **2. Execution**
+1.  Turn on your **VPN**.
+2.  Open your terminal and run: `pip install pandas requests python-dotenv`.
+3.  Run the script: `python src/tmdb_extractor.py`.
+4.  Open the Power BI report in the `/powerbi` folder and hit **Refresh**.
 
 ---
 
-### **📂 Project Structure**
-* **`/data`**: Stores the movie spreadsheets.
-* **`/src`**: Contains the Python extraction code.
-* **`/powerbi`**: Contains the Power BI `.pbix` file.
-
+## 📂 Project Structure
+* **`/data`**: Processed CSV datasets.
+* **`/src`**: Python extraction scripts.
+* **`/powerbi`**: Dashboard `.pbix` file.
+* **`/assets`**: Project screenshots and visuals.
