@@ -60,6 +60,9 @@ I created a **Strategic Acquisition Map** (Scatter Chart) to visualize where mov
 * **TMDB API Key** (Place it in a `.env` file as `TMDB_API_KEY=your_key`).
 * **🌍 VPN (Mandatory)**: A VPN is required to connect to the TMDB API servers properly.
 * **Power BI Desktop**.
+#### 🌍 VPN Note
+TMDB API access can be **region-restricted or unstable** in some locations.  
+Using a VPN ensures consistent connectivity during data extraction.
 
 ### **2. Execution**
 1.  Turn on your **VPN**.
