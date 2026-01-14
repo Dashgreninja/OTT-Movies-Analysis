@@ -15,6 +15,7 @@ This is the "brain" of the project. The podium automatically updates to show the
 ![Dashboard Screenshot](assets/Top_Movies_Stats.png)
 
 ![Podium Screenshot](assets/Top_Movies.png)
+
 *Caption: Dynamic rankings powered by real-time TMDB data.*
 
 ---
